@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mantra bages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <h1 class="font-bold">hello</h1>
+  <div class="flex mx-5 ">
+    <button type="button" class=" focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mx" 
+    class="buttonadd" onclick="
+
+      cartQuantity =cartQuantity + 1;
+      document.querySelector('#cart-summary').innerText=`you item have been ${cartQuantity} item`;
+    "
+    >Add to bag</button>
+
+    <button type="button" class=" focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900 " class=".buttonminus"onclick="
+      cartQuantity =cartQuantity-1;
+      document.querySelector('#cart-summary').innerText=`you item have been ${cartQuantity} item`;
+
+
+    
+    "> remov item</button>
+
+    <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Add 1+1 item sale</button>
+
+  </div>
+  <div>
+    <h1 id="cart-summary"></h1>
+  </div>
+  <hr>
+  <div>
+    <h1 id="name" class="font-bold" >
+
+    </h1>
+  </div>
+  <script>
+    let cartQuantity=0;
+    document.querySelector("#cart-summary").innerText=`you item have been ${cartQuantity} item`;
+
+    // const add=document.querySelector(".buttonadd")
+    // const minus=document.querySelector(".buttonminus")
+    //  add.addEventListener("click",()=>{
+    //   cartQuantity +=1;
+    //  })
+    //  minus.addEventListener("click",()=>{
+    //   cartQuantity -=1;
+    //  } )
+        
+  
+  </script>
+  
+  <script >
+    const my_name="Gaurav kumar mishra"
+    document.querySelector("#name").innerText=`myname is ${my_name}`
+  </script>
+   <script>
+    let jeans=(1540-(1540)*14/100+121)
+    let bag=(1440-(1440)*14/100+60)        
+    let value=(jeans+bag)
+    let totle=Math.round(value);
+    let ans=Math.round((totle+(totle*28/100)))
+    console.log(jeans + bag)
+    console.log(value)
+    console.log(totle)
+    console.log("answer "+ ans)
+    let a=`answer {totle}`
+    let welcom="hello massage";
+    console.log(welcom);
+let b="gaurav";
+console.log(b)
+let t=5;
+let ts=5;
+let tsr=eval('t+ts');
+console.log(tsr)
+</script>
+
+</body>
+</html>

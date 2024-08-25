@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body class="mb-30 p-20">
+  <div class="box-border h-150 w-80 p-4 border-4">
+    <div>  
+      <h1 class="font-bold text-center mb-4">Calculator</h1>
+      <input id="display" type="text" readonly class="hover:bg-grey-800 ml-10 border-4 font-bold hover:box-content px-4 py-2 text-right">
+      <div class="border ml-8 py-4 grid grid-cols-4 gap-2">
+
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('1')">1</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('2')">2</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('3')">3</button>
+        <button class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('+')">+</button>
+        
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('4')">4</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('5')">5</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('6')">6</button>
+        <button class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('-')">-</button>
+        
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('7')">7</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('8')">8</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('9')">9</button>
+        <button class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5"
+         onclick="appendToDisplay('*')">*</button>
+        
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('.')">.</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5" onclick="appendToDisplay('0')">0</button>
+        <button class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5"
+         onclick="calculate()">=</button>
+        <button class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5" 
+        onclick="appendToDisplay('/')">/</button>
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    let currentDisplay = '';
+    function appendToDisplay(value) {
+      currentDisplay += value;
+      document.querySelector('#display').value = currentDisplay;
+    }
+
+    function calculate() {
+      try {
+        currentDisplay = eval(currentDisplay).toString();
+      } catch {
+        currentDisplay = 'Error';
+      }
+      document.querySelector('#display').value = currentDisplay;
+    }
+  </script>
+</body>
+</html>
